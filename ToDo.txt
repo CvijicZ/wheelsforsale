@@ -1,3 +1,3 @@
-* Create layout page
-* Create "register" View and form for registration in Bootstrap.
 * Inside layout page create header (nav menu) and footer.
+* Create Views: Home (index), Register (with form)
+* Create "register" View and form for registration in Bootstrap.

@@ -1,2 +1,2 @@
-* Create Views: Home (index), Register (with form)
-* Create "register" View and form for registration in Bootstrap.
+* Create database and table User
+* Create singUp logic in PHP

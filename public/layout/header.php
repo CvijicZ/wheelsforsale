@@ -31,8 +31,8 @@
             </li>
         </ul>
         <ul id="menu" class="navbar-nav sm-icons mr-0">
-            <li id="iconRegister" class="nav-item border border-dark"><a class="nav-link" href="#"><i  class="bi bi-person-plus-fill"></i>Napravi nalog</a></li>
-            <li id="iconLogin" class="nav-item border border-dark"><a class="nav-link" href="#"><i  class="bi bi-box-arrow-in-left"></i>Prijavi se</a></li>
+            <li id="iconRegister" class="nav-item border border-dark"><button class="nav-link" data-bs-toggle="modal" data-bs-target="#singupModal"><i  class="bi bi-person-plus-fill"></i>Napravi nalog</button></li>
+            <li id="iconLogin" class="nav-item border border-dark"><button class="nav-link" data-bs-toggle="modal" data-bs-target="#singinModal"><i  class="bi bi-box-arrow-in-left"></i>Prijavi se</button></li>
             <!-- <li class="nav-item"><a class="nav-link" href="#"><i id="icon" class="bi bi-box-arrow-in-right"></i>Log Out</a></li> -->           
         </ul>
     </div>

@@ -1,1 +1,2 @@
 * Nav-menu template by: codingyaar.com
+* Bootstrap modal for SingUp: https://github.com/lonewolf2310/Bootstrap_modal_login/tree/main/bootstrap%20modal%20login

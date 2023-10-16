@@ -1,8 +1,8 @@
 <footer class="bg-dark text-center text-lg-start">
   <!-- Copyright -->
-  <div class="text-center p-3" style="color: rgb(192, 1, 1);">
+  <div class="text-center p-3 fixed-bottom" style="color: #222;">
     © 2023 Copyright: Zoran Cvijic
-   <a href=""  style="color:#f32929;">Portfolio</a>
+   <a href=""  style="color:#bbb;">Portfolio</a>
   </div>
   <!-- Copyright -->
 </footer>

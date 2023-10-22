@@ -1,2 +1,3 @@
 * Create database and table User
+* Create error handling system and error log system
 * Create singUp logic in PHP

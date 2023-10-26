@@ -20,13 +20,13 @@ include "public/layout/header.php";
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>                        
                     </div>
                     <div class="modal-body">
-                        <form method="POST" action="#">
+                        <form method="POST" action="app/user/RegistrationController.php">
                             <label>
                                 <i class="bi bi-person-fill"></i>
                                 Korisničko ime
                             </label>
                             <div>
-                                <input type="text" placeholder="Korisničko ime" required/>
+                                <input type="text" name="userName" placeholder="Korisničko ime" required/>
                             </div>
 
                             <label>
@@ -34,7 +34,7 @@ include "public/layout/header.php";
                                 E-mail
                             </label>
                             <div>
-                                <input type="email" placeholder="E-mail" required/>
+                                <input type="email" name="email" placeholder="E-mail" required/>
                             </div>
 
                             <label>
@@ -42,7 +42,7 @@ include "public/layout/header.php";
                                 Lozinka
                             </label>
                             <div>
-                                <input type="password" placeholder="Unesi lozinku" required />
+                                <input type="password" name="password" placeholder="Unesi lozinku" required/>
                             </div>
 
                             <label>
@@ -50,11 +50,11 @@ include "public/layout/header.php";
                                 Ponovi lozinku
                             </label>
                             <div>
-                                <input type="password" placeholder="Ponovi lozinku" required />
+                                <input type="password" name="repeatedPassword" placeholder="Ponovi lozinku" required/>
                             </div>
 
                             <div>
-                                <button class="btn btn-dark" type="submit">
+                                <button class="btn btn-dark" type="submit" name="submit">
                                     <i class="bi bi-person-check"> </i>
                                     Potvrdi
                                 </button>

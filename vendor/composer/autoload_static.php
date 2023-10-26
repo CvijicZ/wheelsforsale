@@ -13,6 +13,10 @@ class ComposerStaticInit36e1594ec8fda821b00c92f51c8b829b
     );
 
     public static $prefixLengthsPsr4 = array (
+        'U' => 
+        array (
+            'User\\' => 5,
+        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Php80\\' => 23,
@@ -30,10 +34,15 @@ class ComposerStaticInit36e1594ec8fda821b00c92f51c8b829b
         'D' => 
         array (
             'Dotenv\\' => 7,
+            'Database\\' => 9,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
+        'User\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/user',
+        ),
         'Symfony\\Polyfill\\Php80\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php80',
@@ -57,6 +66,10 @@ class ComposerStaticInit36e1594ec8fda821b00c92f51c8b829b
         'Dotenv\\' => 
         array (
             0 => __DIR__ . '/..' . '/vlucas/phpdotenv/src',
+        ),
+        'Database\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/database',
         ),
     );
 

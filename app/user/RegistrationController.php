@@ -16,17 +16,28 @@ if (isset($_POST['register'])) {
     $password = $_POST['password'];
     $repeatedPassword = $_POST['repeatedPassword'];
 
-    // Instanciating User and UserValidation classes
+    // Instanciating User 
     $user = new User($userName, $email, $password);
-    $userValidate = new UserValidation($user, $repeatedPassword);
 
     // Calling validate method from UserValidation class for user input check's, redirecting user if data is not as expected
-
-    $userValidate->validateRegistration();
-
-    if (isset($userValidate->error)) {
-
-        header("location: ../../index.php?error=" . $userValidate->error);
+    if(!UserValidation::validateUsername($user->getUsername())){
+        header("location: ../../index.php?error=userNameError");
+        exit();
+    }
+    if($user->isTakenUsername($user->getUsername())){
+        header("location: ../../index.php?error=userNameTaken");
+        exit();
+    }
+    if(!UserValidation::validateEmail($user->getEmail())){
+        header("location: ../../index.php?error=emailError");
+        exit();
+    }
+    if($user->isTakenEmail($user->getEmail())){
+        header("location: ../../index.php?error=emailTaken");
+        exit();
+    }
+    if(!UserValidation::validatePassword($user->getPassword(), $repeatedPassword)){
+        header("location: ../../index.php?error=passwordError");
         exit();
     }
 

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 require_once $_SERVER['DOCUMENT_ROOT'] . "/wheelsforsale/app/ErrorHandler.php";
 error_reporting(E_ALL | E_ERROR);
 ini_set("display_errors", 0);

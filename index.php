@@ -54,7 +54,7 @@ include "public/layout/header.php";
                             </div>
 
                             <div>
-                                <button class="btn btn-dark" type="submit" name="submit">
+                                <button class="btn btn-dark" type="submit" name="register">
                                     <i class="bi bi-person-check"> </i>
                                     Potvrdi
                                 </button>
@@ -91,13 +91,13 @@ include "public/layout/header.php";
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>                                     
                     </div>
                     <div class="modal-body">
-                        <form method="POST" action="#">
+                        <form method="POST" action="app/user/LogInController.php">
                             <label>
                                 <i class="bi bi-person-fill"></i>
                                 Korisničko ime
                             </label>
                             <div>
-                                <input type="text" placeholder="Korisnicko ime ili e-mail" required/>
+                                <input type="text" name="userName" placeholder="Korisnicko ime ili e-mail" required/>
                             </div>
 
                             <label>
@@ -105,11 +105,11 @@ include "public/layout/header.php";
                                 Lozinka
                             </label>
                             <div>
-                                <input type="password" placeholder="Lozinka" required />
+                                <input type="password" name="password" placeholder="Lozinka" required />
                             </div>
 
                             <div>
-                                <button class="btn btn-dark" type="submit">
+                                <button class="btn btn-dark" type="submit" name="login">
                                     <i class="bi bi-lock"></i>
                                     Prijavi se
                                 </button>

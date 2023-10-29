@@ -1,4 +1,5 @@
 <?php
+
 namespace User;
 
 require_once $_SERVER['DOCUMENT_ROOT'] . "/wheelsforsale/config.php";
@@ -15,29 +16,29 @@ class User
     private string $password;
     private string $role = "user";
     private int $tokens = 3;
-    private $db;
+    private DbConnection $db;
 
-    public function __construct($userName, $email, $password)
+    public function __construct(string $userName, string $email, string $password)
     {
         $this->userName = $userName;
         $this->email = $email;
         $this->password = $password;
         $this->db = DbConnection::getInstance();
     }
-    public function getUsername()
+    public function getUsername(): string
     {
         return $this->userName;
     }
-    public function getEmail()
+    public function getEmail(): string
     {
         return $this->email;
     }
-    public function getPassword()
+    public function getPassword(): string
     {
         return $this->password;
     }
 
-    public function isTakenEmail($email)
+    public function isTakenEmail(string $email): bool
     {
         $sql = "SELECT email FROM user WHERE email= :email";
         $stmt = $this->db->getPdo()->prepare($sql);
@@ -45,12 +46,10 @@ class User
         $stmt->execute();
         $result = $stmt->fetchColumn();
 
-        if (!$result === false) {
-            return true;
-        }
+        return $result !== false;
     }
 
-    public function isTakenUsername($userName)
+    public function isTakenUsername(string $userName): bool
     {
         $sql = "SELECT user_name FROM user WHERE user_name= :userName";
         $stmt = $this->db->getPdo()->prepare($sql);
@@ -60,29 +59,23 @@ class User
 
         $result = $stmt->fetchColumn();
 
-        if (!$result === false) {
-            return true;
-        }
+       return $result !==false;
     }
 
-    public function registerUser()
+    public function registerUser(): bool
     {
         $sql = "INSERT INTO user(user_name, email, password, role, tokens) VALUES(:userName, :email, :password, :role, :tokens)";
         $stmt = $this->db->getPdo()->prepare($sql);
 
-        $stmt->bindParam(':userName', $this->userName);
-        $stmt->bindParam(':email', $this->email);
+        $stmt->bindParam(':userName', $this->userName, \PDO::PARAM_STR, 50);
+        $stmt->bindParam(':email', $this->email, \PDO::PARAM_STR, 255);
 
         $hashedPwd = password_hash($this->password, PASSWORD_DEFAULT);
-        $stmt->bindParam(':password', $hashedPwd);
+        $stmt->bindParam(':password', $hashedPwd, \PDO::PARAM_STR, 255);
 
-        $stmt->bindParam(':role', $this->role);
-        $stmt->bindParam(':tokens', $this->tokens);
+        $stmt->bindParam(':role', $this->role, \PDO::PARAM_STR, 10);
+        $stmt->bindParam(':tokens', $this->tokens, \PDO::PARAM_INT, 10);
 
-        if ($stmt->execute()) {
-            return true;
-        } else {
-            return false;
-        }
+        return $stmt->execute();
     }
 }
